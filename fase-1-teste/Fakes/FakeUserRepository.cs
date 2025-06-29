@@ -1,4 +1,4 @@
-public class MockUserRepository : IUserRepository
+public class FakeUserRepository : IUserRepository
 {
     private readonly List<User> _users = new();
 

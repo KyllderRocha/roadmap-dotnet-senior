@@ -3,13 +3,13 @@ namespace Tests.Controllers;
 
 public class TaskControllerTests
 {
-    private readonly MockTaskService _mockTaskService;
+    private readonly FakeTaskService _fakeTaskService;
     private readonly TaskController _taskController;
 
     public TaskControllerTests()
     {
-        _mockTaskService = new MockTaskService();
-        _taskController = new TaskController(_mockTaskService);
+        _fakeTaskService = new FakeTaskService();
+        _taskController = new TaskController(_fakeTaskService);
     }
 
     [Fact]
@@ -19,8 +19,8 @@ public class TaskControllerTests
         var userId = Guid.NewGuid();
         var task1 = new UserTask ("Task 1" , userId);
         var task2 = new UserTask ("Task 2" , userId);
-        await _mockTaskService.AddAsync(task1);
-        await _mockTaskService.AddAsync(task2);
+        await _fakeTaskService.AddAsync(task1);
+        await _fakeTaskService.AddAsync(task2);
         // Act
         var result = await _taskController.GetUserTasks(userId.ToString());
         // Assert
@@ -37,7 +37,7 @@ public class TaskControllerTests
         // Arrange
         var userId = Guid.NewGuid();
         var task = new UserTask("Sample Task" , userId);
-        await _mockTaskService.AddAsync(task);
+        await _fakeTaskService.AddAsync(task);
         // Act
         var result = await _taskController.GetTaskById(task.Id);
         // Assert
@@ -72,13 +72,13 @@ public class TaskControllerTests
         // Arrange
         var userId = Guid.NewGuid();
         var task = new UserTask ("Task to Update", userId);
-        await _mockTaskService.AddAsync(task);
-        task.Title = "Updated Task Title";
+        await _fakeTaskService.AddAsync(task);
+        task.SetTitle("Updated Task Title");
         // Act
         var result = _taskController.UpdateTask(task.Id, task);
         // Assert
         Assert.IsType<NoContentResult>(result);
-        var updatedTask = await _mockTaskService.GetByIdAsync(task.Id);
+        var updatedTask = await _fakeTaskService.GetByIdAsync(task.Id);
         Assert.NotNull(updatedTask);
         Assert.Equal("Updated Task Title", updatedTask?.Title);
     }
@@ -89,12 +89,12 @@ public class TaskControllerTests
         // Arrange
         var userId = Guid.NewGuid();
         var task = new UserTask("Task to Delete", userId);
-        await _mockTaskService.AddAsync(task);
+        await _fakeTaskService.AddAsync(task);
         // Act
-        var result = _taskController.DeleteTask(task.Id);
+        var result = await _taskController.DeleteTask(task.Id);
         // Assert
         Assert.IsType<NoContentResult>(result);
-        var deletedTask = await _mockTaskService.GetByIdAsync(task.Id);
+        var deletedTask = await _fakeTaskService.GetByIdAsync(task.Id);
         Assert.Null(deletedTask);
     }
 

@@ -2,9 +2,9 @@ namespace Tests.Services;
 
 public class TaskServiceTests
 {
-    private readonly MockTaskRepository _mockTaskRepository;
-    private readonly MockUnitOfWork _mockUnitOfWork;
-    private readonly MockUserRepository _mockUserRepository;
+    private readonly FakeTaskRepository _fakeTaskRepository;
+    private readonly FakeUnitOfWork _fakeUnitOfWork;
+    private readonly FakeUserRepository _fakeUserRepository;
     private readonly TaskService _taskService;
     private readonly UserService _userService;
 
@@ -12,11 +12,11 @@ public class TaskServiceTests
 
     public TaskServiceTests()
     {
-        _mockTaskRepository = new MockTaskRepository();
-        _mockUnitOfWork = new MockUnitOfWork();
-        _mockUserRepository = new MockUserRepository();
-        _taskService = new TaskService(_mockTaskRepository, _mockUnitOfWork);
-        _userService = new UserService(_mockUserRepository, _mockUnitOfWork);
+        _fakeTaskRepository = new FakeTaskRepository();
+        _fakeUnitOfWork = new FakeUnitOfWork();
+        _fakeUserRepository = new FakeUserRepository();
+        _taskService = new TaskService(_fakeTaskRepository, _fakeUnitOfWork);
+        _userService = new UserService(_fakeUserRepository, _fakeUnitOfWork);
         user = _userService.CreateUserAsync("Test User", "testuser@example.com").Result;
     }
 
@@ -38,8 +38,8 @@ public class TaskServiceTests
     {
         var task1 = new UserTask("Task 1", user.Id);
         var task2 = new UserTask("Task 2", user.Id);
-        _taskService.AddAsync(task1).Wait();
-        _taskService.AddAsync(task2).Wait();
+        await _taskService.AddAsync(task1);
+        await _taskService.AddAsync(task2);
 
         var tasks = await _taskService.GetAllByUserIdAsync(user.Id);
         Assert.NotNull(tasks);
@@ -52,7 +52,7 @@ public class TaskServiceTests
     public async Task GetTaskByIdAsync_ShouldReturnTask_WhenTaskExists()
     {
         var task = new UserTask("Existing Task", user.Id);
-        _taskService.AddAsync(task).Wait();
+        await _taskService.AddAsync(task);
         var result = await _taskService.GetByIdAsync(task.Id);
         Assert.NotNull(result);
         Assert.Equal(task.Id, result.Id);
@@ -64,10 +64,10 @@ public class TaskServiceTests
     public async Task UpdateTaskAsync_ShouldUpdateTask_WhenCalled()
     {
         var task = new UserTask("Task to Update", user.Id);
-        _taskService.AddAsync(task).Wait();
+        await _taskService.AddAsync(task);
 
-        task.Title = "Updated Task Title";
-        task.IsDone = true;
+        task.SetTitle("Updated Task Title");
+        task.MarkAsDone();
         _taskService.Update(task);
         var updatedTask = await _taskService.GetByIdAsync(task.Id);
 

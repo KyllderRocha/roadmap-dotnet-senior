@@ -73,14 +73,14 @@ public class TaskController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    public IActionResult DeleteTask(Guid id)
+    public async Task<IActionResult> DeleteTask(Guid id)
     {
         if (id == Guid.Empty)
         {
             return BadRequest("Invalid task ID.");
         }
 
-        var task = _taskService.GetByIdAsync(id).Result;
+        var task = await _taskService.GetByIdAsync(id);
         if (task == null)
         {
             return NotFound("Task not found.");
