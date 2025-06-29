@@ -26,16 +26,20 @@ public class UserRepository : IUserRepository
         _context.Users.Remove(user);
     }
 
-    public Task<IEnumerable<User>> GetAllAsync()
+    public async Task<IEnumerable<User>> GetAllAsync()
     {
-        return _context.Users.ToListAsync().ContinueWith(task => task.Result.AsEnumerable());
+        var users = await _context.Users
+            .AsNoTracking()
+            .ToListAsync();
+
+        return users.AsEnumerable();
     }
 
-    public Task<User?> GetByIdAsync(Guid id)
+    public async Task<User?> GetByIdAsync(Guid id)
     {
         if (id == Guid.Empty) throw new ArgumentException("ID cannot be empty.", nameof(id));
 
-        return _context.Users.FindAsync(id).AsTask();
+        return await _context.Users.FindAsync(id);
     }
 
     public void Update(User user)

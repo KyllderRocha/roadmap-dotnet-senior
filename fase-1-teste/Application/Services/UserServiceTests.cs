@@ -2,15 +2,15 @@ namespace Tests.Services;
 
 public class UserServiceTests
 {
-    private readonly MockUserRepository _mockUserRepository;
-    private readonly MockUnitOfWork _mockUnitOfWork;
+    private readonly FakeUserRepository _fakeUserRepository;
+    private readonly FakeUnitOfWork _fakeUnitOfWork;
     private readonly UserService _userService;
 
     public UserServiceTests()
     {
-        _mockUserRepository = new MockUserRepository();
-        _mockUnitOfWork = new MockUnitOfWork();
-        _userService = new UserService(_mockUserRepository, _mockUnitOfWork);
+        _fakeUserRepository = new FakeUserRepository();
+        _fakeUnitOfWork = new FakeUnitOfWork();
+        _userService = new UserService(_fakeUserRepository, _fakeUnitOfWork);
     }
 
     [Fact]
@@ -29,7 +29,7 @@ public class UserServiceTests
     public async Task CreateUserAsync_ShouldThrowException_WhenEmailAlreadyExists()
     {
         var existingUser = new User("Existing User", "exists@email.com");
-        await _mockUserRepository.AddAsync(existingUser);
+        await _fakeUserRepository.AddAsync(existingUser);
 
         var exception = await Assert.ThrowsAsync<InvalidOperationException>(() => 
             _userService.CreateUserAsync("Another User", "exists@email.com"));

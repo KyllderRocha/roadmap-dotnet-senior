@@ -21,7 +21,6 @@ public class TaskRepository : ITaskRepository
         }
 
         var result = await _context.Tasks.AddAsync(task);
-        await _context.SaveChangesAsync();
         return result.Entity;
     }
 
@@ -33,30 +32,31 @@ public class TaskRepository : ITaskRepository
         }
 
         _context.Tasks.Remove(task);
-        _context.SaveChanges();
     }
 
-    public Task<IEnumerable<UserTask>> GetAllByUserIdAsync(Guid userId)
+    public async Task<IEnumerable<UserTask>> GetAllByUserIdAsync(Guid userId)
     {
         if (userId == Guid.Empty)
         {
             throw new ArgumentException("User ID cannot be empty.", nameof(userId));
         }
 
-        return _context.Tasks
+        var tasks = await _context.Tasks
             .Where(t => t.UserId == userId)
-            .ToListAsync()
-            .ContinueWith(task => task.Result.AsEnumerable());
+            .AsNoTracking()
+            .ToListAsync();
+
+        return tasks.AsEnumerable();
     }
 
-    public Task<UserTask?> GetByIdAsync(Guid id)
+    public async Task<UserTask?> GetByIdAsync(Guid id)
     {
         if (id == Guid.Empty)
         {
             throw new ArgumentException("Task ID cannot be empty.", nameof(id));
         }
 
-        return _context.Tasks
+        return await _context.Tasks
             .FirstOrDefaultAsync(t => t.Id == id);
     }
 
@@ -68,6 +68,5 @@ public class TaskRepository : ITaskRepository
         }
 
         _context.Tasks.Update(task);
-        _context.SaveChanges();
     }
 }

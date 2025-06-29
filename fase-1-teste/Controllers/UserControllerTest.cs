@@ -1,4 +1,5 @@
 
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 namespace Tests.Controllers;
 
@@ -16,14 +17,14 @@ public class UserControllerTests
     [Fact]
     public async Task GetAllUsers_ShouldReturnOk_WhenUsersExist()
     {
-        _mockUserService.CreateUserAsync("Test User 1", "test1@test.com").Wait();
-        _mockUserService.CreateUserAsync("Test User 2", "test2@test.com").Wait();
+        await _mockUserService.CreateUserAsync("Test User 1", "test1@test.com");
+        await _mockUserService.CreateUserAsync("Test User 2", "test2@test.com");
 
         // Act
         var result = await _userController.GetAllUsers();
-
+        
         // Assert
-        var okResult = Assert.IsType<OkObjectResult>(result.Result);
+        var okResult = Assert.IsType<OkObjectResult>(result.Result); 
         var returnedUsers = Assert.IsType<List<User>>(okResult.Value);
         Assert.Equal(2, returnedUsers.Count);
         Assert.Equal("Test User 1", returnedUsers[0].Name);
@@ -48,18 +49,18 @@ public class UserControllerTests
         var result = _userController.CreateUser(newUser);
 
         // Assert
-        var okResult = Assert.IsType<OkObjectResult>(result);
+        var okResult = Assert.IsType<OkObjectResult>(result.Result);
         var createdUser = Assert.IsType<User>(okResult.Value);
         Assert.Equal("New User", createdUser.Name);
     }
 
     [Fact]
-    public void CreateUser_ShouldReturnBadRequest_WhenUserIsNull()
+    public async Task CreateUser_ShouldReturnBadRequest_WhenUserIsNull()
     {
         // Arrange
         User nullUser = null;
         // Act
-        var result = _userController.CreateUser(nullUser);
+        var result = await _userController.CreateUser(nullUser);
         // Assert
         Assert.IsType<BadRequestObjectResult>(result);
         var badRequestResult = result as BadRequestObjectResult;

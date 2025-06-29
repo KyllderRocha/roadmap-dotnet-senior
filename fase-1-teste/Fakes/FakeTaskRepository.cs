@@ -1,11 +1,7 @@
 
-
-public class MockTaskService : ITaskService
+public class FakeTaskRepository : ITaskRepository
 {
-    // This is a mock implementation of ITaskService for testing purposes.
-    // In a real application, this would interact with a database or other data source.
-
-    private readonly List<UserTask> _tasks = new List<UserTask>();
+    private readonly List<UserTask> _tasks = new();
 
     public Task<UserTask> AddAsync(UserTask task)
     {
@@ -35,8 +31,8 @@ public class MockTaskService : ITaskService
         var existingTask = _tasks.FirstOrDefault(t => t.Id == task.Id);
         if (existingTask != null)
         {
-            _tasks.Remove(existingTask);
-            _tasks.Add(task);
+            existingTask.SetTitle(task.Title);
+            existingTask.SetIsDone(task.IsDone);
         }
     }
 }

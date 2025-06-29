@@ -81,11 +81,13 @@ public class TaskRepositoryTests
     {
         await using var context = GetInMemoryDbContext();
         var taskRepository = new TaskRepository(context);
+
         var task = new UserTask("Old Task", userTest.Id);
         await taskRepository.AddAsync(task);
-        task.Title = "Updated Task";
-        task.IsDone = true;
-        task.UserId = userTest.Id;
+        await context.SaveChangesAsync();
+        
+        task.SetTitle("Updated Task");
+        task.MarkAsDone();
 
         taskRepository.Update(task);
         await context.SaveChangesAsync();

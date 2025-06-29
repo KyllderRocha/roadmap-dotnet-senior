@@ -1,5 +1,5 @@
 
-public class MockUnitOfWork : IUnitOfWork
+public class FakeUnitOfWork : IUnitOfWork
 {
     public Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {

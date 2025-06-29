@@ -26,7 +26,7 @@ public class UserController: ControllerBase{
     }
 
     [HttpPost]
-    public IActionResult CreateUser([FromBody] User user)
+    public async Task<IActionResult> CreateUser([FromBody] User user)
     {
         if (user == null)
         {
@@ -35,7 +35,7 @@ public class UserController: ControllerBase{
 
         try
         {
-            var createdUser = _userService.CreateUserAsync(user.Name, user.Email).Result;
+            var createdUser = await _userService.CreateUserAsync(user.Name, user.Email);
             return Ok(createdUser);
         }
         catch (Exception ex)
