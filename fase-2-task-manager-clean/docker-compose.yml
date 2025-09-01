@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  # Serviço da nossa API
+  api:
+    container_name: taskmanager-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" # Expõe a porta 8080 da máquina para a porta 8080 do contêiner
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      # A Connection String para o banco que está rodando no outro contêiner
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=taskmanagerdb;Username=postgres;Password=postgres
+    depends_on:
+      db: # Diz ao Docker para iniciar o banco ANTES da API
+        condition: service_healthy 
+
+  # Serviço do Banco de Dados PostgreSQL
+  db:
+    container_name: taskmanager-db
+    image: postgres:15
+    ports:
+      - "5433:5432" # Expõe a porta do Postgres para a sua máquina
+    environment:
+      - POSTGRES_DB=taskmanagerdb
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Garante que os dados do banco persistam
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d taskmanagerdb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
