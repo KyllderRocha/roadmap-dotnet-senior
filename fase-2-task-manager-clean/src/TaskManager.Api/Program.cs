@@ -1,3 +1,5 @@
+using FluentValidation;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using TaskManager.Application.Services;
 using TaskManager.Domain.Interfaces;
@@ -6,8 +8,13 @@ using TaskManager.Infrastructure.Persistence.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddMediatR(cfg => 
-    cfg.RegisterServicesFromAssembly(typeof(TaskManager.Application.AssemblyReference).Assembly));
+builder.Services.AddValidatorsFromAssembly(typeof(TaskManager.Application.AssemblyReference).Assembly);
+
+builder.Services.AddMediatR(cfg =>
+{
+    cfg.RegisterServicesFromAssembly(typeof(TaskManager.Application.AssemblyReference).Assembly);
+    cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+});
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
@@ -29,6 +36,7 @@ builder.Services.AddScoped<ITaskService, TaskService>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 
 var app = builder.Build();
 app.MapControllers();

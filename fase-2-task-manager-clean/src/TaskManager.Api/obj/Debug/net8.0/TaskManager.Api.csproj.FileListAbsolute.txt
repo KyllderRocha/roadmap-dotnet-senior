@@ -172,3 +172,5 @@
 /home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 /home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 /home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/bin/Debug/net8.0/FluentValidation.dll
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/bin/Debug/net8.0/FluentValidation.DependencyInjectionExtensions.dll

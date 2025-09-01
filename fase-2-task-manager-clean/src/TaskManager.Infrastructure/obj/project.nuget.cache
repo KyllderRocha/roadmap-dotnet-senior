@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "IpohXhBRNU84e8Y8Ghw9leAUJmHkDGTpPal9ooMRYA1yFvkwUP/izmBVG1zunl81eDcXr52zxIqNbf5gkwlymw==",
+  "dgSpecHash": "v6fCQFDL8gJi/K+Bh2wVB6/4dnp8klbHanZO3b86CI/dz90llcXwTDq9NYmSixkqT3togdqlV+OWH1OrAWOsvQ==",
   "success": true,
   "projectFilePath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj",
   "expectedPackageFiles": [
+    "/home/kyllder/.nuget/packages/fluentvalidation/12.0.0/fluentvalidation.12.0.0.nupkg.sha512",
+    "/home/kyllder/.nuget/packages/fluentvalidation.dependencyinjectionextensions/12.0.0/fluentvalidation.dependencyinjectionextensions.12.0.0.nupkg.sha512",
     "/home/kyllder/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/kyllder/.nuget/packages/mediatr/13.0.0/mediatr.13.0.0.nupkg.sha512",
     "/home/kyllder/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",

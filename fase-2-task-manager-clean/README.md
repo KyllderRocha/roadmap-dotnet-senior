@@ -25,6 +25,11 @@ dotnet add src/YourApiName.Api/YourApiName.Api.csproj reference src/YourApiName.
 
 dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
 
+cd src/TaskManagerClean.Application
+
+dotnet add package FluentValidation
+dotnet add package FluentValidation.DependencyInjectionExtensions
+
 ---
 
 # No terminal, dentro da pasta fase-2-task-manager-clean
