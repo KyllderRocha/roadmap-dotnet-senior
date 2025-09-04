@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("fase-1-task-manager-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+60d94ff34a298ea9f29c6e66f85e598145a04edc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f30d520d8ba262604de1f1da84581d67b52a912")]
 [assembly: System.Reflection.AssemblyProductAttribute("fase-1-task-manager-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("fase-1-task-manager-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

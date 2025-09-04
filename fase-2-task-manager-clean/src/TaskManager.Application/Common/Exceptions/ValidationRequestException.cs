@@ -1,6 +1,6 @@
 using FluentValidation.Results;
 
-namespace TaskManagerClean.Application.Common.Exceptions;
+namespace TaskManager.Application.Common.Exceptions;
 
 public class ValidationRequestException : Exception
 {

@@ -5,6 +5,7 @@ using TaskManager.Application.Services;
 using TaskManager.Domain.Interfaces;
 using TaskManager.Infrastructure.Persistence;
 using TaskManager.Infrastructure.Persistence.Repositories;
+using TaskManager.Api.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,6 +41,8 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 app.MapControllers();
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
