@@ -1,0 +1,11 @@
+2025-09-04 11:21:30.942 -03:00 [INF] HTTP GET /swagger/ responded 301 in 9.5511 ms
+2025-09-04 11:21:31.048 -03:00 [INF] HTTP GET /swagger/index.html responded 200 in 71.3182 ms
+2025-09-04 11:21:31.393 -03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 83.5909 ms
+2025-09-04 11:21:40.283 -03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-04 11:21:41.225 -03:00 [ERR] An error occurred using the connection to database 'taskmanagerdb' on server 'tcp://localhost:5433'.
+2025-09-04 11:21:41.230 -03:00 [ERR] An error occurred using the connection to database 'taskmanagerdb' on server 'tcp://localhost:5433'.
+2025-09-04 11:21:42.271 -03:00 [ERR] An error occurred using the connection to database 'taskmanagerdb' on server 'tcp://localhost:5433'.
+2025-09-04 11:21:45.356 -03:00 [ERR] An error occurred using the connection to database 'taskmanagerdb' on server 'tcp://localhost:5433'.
+2025-09-04 11:21:52.719 -03:00 [ERR] An error occurred using the connection to database 'taskmanagerdb' on server 'tcp://localhost:5433'.
+2025-09-04 11:22:08.475 -03:00 [INF] HTTP GET /api/User responded 200 in 28208.1055 ms
+2025-09-04 11:22:33.782 -03:00 [INF] HTTP GET /api/Task/GetUserTasks/9d865a39-c3e8-4a43-a4ec-dbae1baf2b77 responded 200 in 122.8343 ms

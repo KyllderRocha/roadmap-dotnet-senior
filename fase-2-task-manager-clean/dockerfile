@@ -1,0 +1,28 @@
+# Estágio 1: Build da Aplicação
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /app
+
+# Copia os arquivos .csproj e restaura as dependências
+COPY *.sln .
+COPY src/TaskManager.Api/*.csproj src/TaskManager.Api/
+COPY src/TaskManager.Application/*.csproj src/TaskManager.Application/
+COPY src/TaskManager.Infrastructure/*.csproj src/TaskManager.Infrastructure/
+COPY src/TaskManager.Domain/*.csproj src/TaskManager.Domain/
+RUN dotnet restore
+
+# Copia todo o código fonte
+COPY src/. ./src
+
+# # Publica a aplicação em modo Release
+# WORKDIR /app/src/TaskManager.Api
+# RUN dotnet publish -c Release -o /app/out
+
+# Publica a aplicação em modo Debug
+WORKDIR /app/src/TaskManager.Api
+RUN dotnet publish -c Debug -o /app/out
+
+# Estágio 2: Criação da Imagem Final
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+WORKDIR /app
+COPY --from=build /app/out ./
+ENTRYPOINT ["dotnet", "TaskManager.Api.dll"]

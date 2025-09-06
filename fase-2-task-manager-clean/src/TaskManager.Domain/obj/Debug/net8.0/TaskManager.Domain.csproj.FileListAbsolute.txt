@@ -1,0 +1,12 @@
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/obj/Debug/net8.0/TaskManager.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/obj/Debug/net8.0/TaskManager.Domain.AssemblyInfoInputs.cache
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/obj/Debug/net8.0/TaskManager.Domain.AssemblyInfo.cs
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/obj/Debug/net8.0/TaskManager.Domain.csproj.CoreCompileInputs.cache
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/obj/Debug/net8.0/TaskManager.Domain.sourcelink.json
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/bin/Debug/net8.0/TaskManager.Domain.deps.json
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/bin/Debug/net8.0/TaskManager.Domain.dll
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/bin/Debug/net8.0/TaskManager.Domain.pdb
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/obj/Debug/net8.0/TaskManager.Domain.dll
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/obj/Debug/net8.0/refint/TaskManager.Domain.dll
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/obj/Debug/net8.0/TaskManager.Domain.pdb
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/obj/Debug/net8.0/ref/TaskManager.Domain.dll

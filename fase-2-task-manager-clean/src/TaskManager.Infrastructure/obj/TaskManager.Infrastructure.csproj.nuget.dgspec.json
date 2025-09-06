@@ -1,0 +1,205 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj": {}
+  },
+  "projects": {
+    "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Application/TaskManager.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Application/TaskManager.Application.csproj",
+        "projectName": "TaskManager.Application",
+        "projectPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Application/TaskManager.Application.csproj",
+        "packagesPath": "/home/kyllder/.nuget/packages/",
+        "outputPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/kyllder/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/TaskManager.Domain.csproj": {
+                "projectPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/TaskManager.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[13.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.119/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/TaskManager.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/TaskManager.Domain.csproj",
+        "projectName": "TaskManager.Domain",
+        "projectPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/TaskManager.Domain.csproj",
+        "packagesPath": "/home/kyllder/.nuget/packages/",
+        "outputPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/kyllder/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.119/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj",
+        "projectName": "TaskManager.Infrastructure",
+        "projectPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj",
+        "packagesPath": "/home/kyllder/.nuget/packages/",
+        "outputPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/kyllder/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Application/TaskManager.Application.csproj": {
+                "projectPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Application/TaskManager.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.119/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
