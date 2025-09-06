@@ -1,56 +1,78 @@
-using FluentValidation;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
-using TaskManager.Application.Services;
-using TaskManager.Domain.Interfaces;
-using TaskManager.Infrastructure.Persistence;
-using TaskManager.Infrastructure.Persistence.Repositories;
+using Serilog;
 using TaskManager.Api.Middleware;
+using TaskManager.Infrastructure;
+using TaskManager.Application; 
 
-var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddValidatorsFromAssembly(typeof(TaskManager.Application.AssemblyReference).Assembly);
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .CreateBootstrapLogger();
 
-builder.Services.AddMediatR(cfg =>
+Log.Information("Initialing web host builder");
+
+try
 {
-    cfg.RegisterServicesFromAssembly(typeof(TaskManager.Application.AssemblyReference).Assembly);
-    cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
-});
+    var builder = WebApplication.CreateBuilder(args);
+    
+    builder.Host.UseSerilog((context, configuration) => 
+        configuration.ReadFrom.Configuration(context.Configuration));
 
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    builder.Services.AddApplicationServices(); 
+    builder.Services.AddInfrastructureServices(builder.Configuration);
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseNpgsql(connectionString, npgsqlOptions =>
+    // builder.Services.AddValidatorsFromAssembly(typeof(TaskManager.Application.AssemblyReference).Assembly);
+
+    // builder.Services.AddMediatR(cfg =>
+    // {
+    //     cfg.RegisterServicesFromAssembly(typeof(TaskManager.Application.AssemblyReference).Assembly);
+    //     cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+    // });
+
+    // var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+    // builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    //     options.UseNpgsql(connectionString, npgsqlOptions =>
+    //     {
+    //         npgsqlOptions.EnableRetryOnFailure(
+    //             maxRetryCount: 5, 
+    //             maxRetryDelay: TimeSpan.FromSeconds(30), 
+    //             errorCodesToAdd: null);
+    //     }));
+
+    // builder.Services.AddScoped<IUserRepository, UserRepository>();
+    // builder.Services.AddScoped<ITaskRepository, TaskRepository>();
+    // builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+    // builder.Services.AddScoped<IUserService, UserService>();
+    // builder.Services.AddScoped<ITaskService, TaskService>();
+
+    builder.Services.AddControllers();
+    builder.Services.AddEndpointsApiExplorer();
+    builder.Services.AddSwaggerGen();
+
+
+    var app = builder.Build();
+    app.MapControllers();
+
+    app.UseSerilogRequestLogging();
+
+    app.UseMiddleware<ExceptionHandlingMiddleware>();
+
+    // Configure the HTTP request pipeline.
+    if (app.Environment.IsDevelopment())
     {
-        npgsqlOptions.EnableRetryOnFailure(
-            maxRetryCount: 5, 
-            maxRetryDelay: TimeSpan.FromSeconds(30), 
-            errorCodesToAdd: null);
-    }));
+        app.UseSwagger();
+        app.UseSwaggerUI();
+    }
 
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<ITaskRepository, TaskRepository>();
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<ITaskService, TaskService>();
+    // app.UseHttpsRedirection();
 
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-
-var app = builder.Build();
-app.MapControllers();
-
-app.UseMiddleware<ExceptionHandlingMiddleware>();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.Run();
 }
-
-// app.UseHttpsRedirection();
-
-app.Run();
+catch (Exception ex)
+{
+    Log.Fatal(ex, "The application failed to start correctly");
+}
+finally
+{
+    Log.CloseAndFlush();
+}

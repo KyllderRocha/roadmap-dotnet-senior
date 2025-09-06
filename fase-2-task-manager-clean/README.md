@@ -2,38 +2,45 @@
 dotnet new sln --name YourApiName
 
 - Create the projects
-dotnet new classlib --name YourApiName.Domain
-dotnet new classlib --name YourApiName.Application
-dotnet new classlib --name YourApiName.Infrastructure
+dotnet new classlib --name TaskManager.Domain
+dotnet new classlib --name TaskManager.Application
+dotnet new classlib --name TaskManager.Infrastructure
 
-dotnet new webapi --name YourApiName.Api
-
-
-dotnet sln add src/YourApiName.Domain/YourApiName.Domain.csproj
-dotnet sln add src/YourApiName.Application/YourApiName.Application.csproj
-dotnet sln add src/YourApiName.Infrastructure/YourApiName.Infrastructure.csproj
-dotnet sln add src/YourApiName.Api/YourApiName.Api.csproj
+dotnet new webapi --name TaskManager.Api
 
 
-dotnet add src/YourApiName.Application/YourApiName.Application.csproj reference src/YourApiName.Domain/YourApiName.Domain.csproj
+dotnet sln add src/TaskManager.Domain/TaskManager.Domain.csproj
+dotnet sln add src/TaskManager.Application/TaskManager.Application.csproj
+dotnet sln add src/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj
+dotnet sln add src/TaskManager.Api/TaskManager.Api.csproj
 
-dotnet add src/YourApiName.Infrastructure/YourApiName.Infrastructure.csproj reference src/YourApiName.Application/YourApiName.Application.csproj
 
-dotnet add src/YourApiName.Api/YourApiName.Api.csproj reference src/YourApiName.Infrastructure/YourApiName.Infrastructure.csproj
-dotnet add src/YourApiName.Api/YourApiName.Api.csproj reference src/YourApiName.Application/YourApiName.Application.csproj
+dotnet add src/TaskManager.Application/TaskManager.Application.csproj reference src/TaskManager.Domain/TaskManager.Domain.csproj
+
+dotnet add src/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj reference src/TaskManager.Application/TaskManager.Application.csproj
+
+dotnet add src/TaskManager.Api/TaskManager.Api.csproj reference src/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj
+dotnet add src/TaskManager.Api/TaskManager.Api.csproj reference src/TaskManager.Application/TaskManager.Application.csproj
 
 
 dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
 
-cd src/TaskManagerClean.Application
+cd src/TaskManager.Application
 
 dotnet add package FluentValidation
 dotnet add package FluentValidation.DependencyInjectionExtensions
 
+# Estando na pasta raiz da solução (fase-2-task-manager-clean)
+cd src/TaskManager.Api
+
+dotnet add package Serilog.AspNetCore
+dotnet add package Serilog.Sinks.File
+dotnet add package Serilog.Sinks.Console
+
 ---
 
 # No terminal, dentro da pasta fase-2-task-manager-clean
-cd src/TaskManagerClean.Application/
+cd src/TaskManager.Application/
 dotnet add package MediatR
 
 ---

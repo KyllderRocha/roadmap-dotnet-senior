@@ -174,3 +174,16 @@
 /home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 /home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/bin/Debug/net8.0/FluentValidation.dll
 /home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/bin/Debug/net8.0/FluentValidation.DependencyInjectionExtensions.dll
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Binder.dll
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/bin/Debug/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/bin/Debug/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/bin/Debug/net8.0/Serilog.dll
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/bin/Debug/net8.0/Serilog.AspNetCore.dll
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/bin/Debug/net8.0/Serilog.Extensions.Hosting.dll
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/bin/Debug/net8.0/Serilog.Extensions.Logging.dll
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/bin/Debug/net8.0/Serilog.Formatting.Compact.dll
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/bin/Debug/net8.0/Serilog.Settings.Configuration.dll
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/bin/Debug/net8.0/Serilog.Sinks.Console.dll
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/bin/Debug/net8.0/Serilog.Sinks.Debug.dll
+/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/bin/Debug/net8.0/Serilog.Sinks.File.dll
