@@ -25,11 +25,11 @@ jobs:
 
       - name: Restore dependencies
         run: dotnet restore
-        working-directory: ./fase-2-task-manager-clean
+        working-directory: ./
 
       - name: Build
         run: dotnet build --no-restore
-        working-directory: ./fase-2-task-manager-clean
+        working-directory: ./
 
       - name: Convert repository name to lowercase
         if: github.event_name == 'push'
@@ -49,7 +49,7 @@ jobs:
         if: github.event_name == 'push'
         uses: docker/build-push-action@v5
         with:
-          context: ./fase-2-task-manager-clean
-          file: ./fase-2-task-manager-clean/dockerfile
+          context: ./
+          file: .//dockerfile
           push: true
           tags: ghcr.io/${{ steps.strings.outputs.repo_lowercase }}:${{ github.sha }}
