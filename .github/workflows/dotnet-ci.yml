@@ -32,11 +32,13 @@ jobs:
         working-directory: ./fase-2-task-manager-clean
 
       - name: Convert repository name to lowercase
+        if: github.event_name == 'push'
         id: strings
         shell: bash
         run: echo "repo_lowercase=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
 
       - name: Log in to GitHub Container Registry
+        if: github.event_name == 'push'
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
@@ -44,9 +46,10 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push Docker image
+        if: github.event_name == 'push'
         uses: docker/build-push-action@v5
         with:
           context: ./fase-2-task-manager-clean
-          file: ./fase-2-task-manager-clean/Dockerfile
+          file: ./fase-2-task-manager-clean/dockerfile
           push: true
           tags: ghcr.io/${{ steps.strings.outputs.repo_lowercase }}:${{ github.sha }}
