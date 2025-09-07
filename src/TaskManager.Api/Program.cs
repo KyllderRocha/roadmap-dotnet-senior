@@ -80,14 +80,8 @@ try
 
 
     var app = builder.Build();
-    app.MapControllers();
-
-    app.UseSerilogRequestLogging();
-
     app.UseMiddleware<ExceptionHandlingMiddleware>();
-
-    app.UseAuthentication(); 
-    app.UseAuthorization(); 
+    app.UseSerilogRequestLogging();
 
     // Configure the HTTP request pipeline.
     if (app.Environment.IsDevelopment())
@@ -95,6 +89,10 @@ try
         app.UseSwagger();
         app.UseSwaggerUI();
     }
+
+    app.UseAuthentication(); 
+    app.UseAuthorization(); 
+    app.MapControllers();
 
     // app.UseHttpsRedirection();
 

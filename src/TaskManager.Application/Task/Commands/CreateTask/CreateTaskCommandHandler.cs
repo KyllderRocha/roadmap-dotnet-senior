@@ -10,9 +10,9 @@ public class CreateTaskCommandHandler : IRequestHandler<CreateTaskCommand, UserT
     private readonly IUnitOfWork _unitOfWork;
     private readonly IHttpContextAccessor _httpContextAccessor;
 
-    public CreateTaskCommandHandler(ITaskRepository userRepository, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor)
+    public CreateTaskCommandHandler(ITaskRepository taskRepository, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor)
     {
-        _taskRepository = userRepository;
+        _taskRepository = taskRepository;
         _unitOfWork = unitOfWork;
         _httpContextAccessor = httpContextAccessor;
     }

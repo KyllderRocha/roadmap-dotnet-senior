@@ -16,7 +16,7 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, User>
 
     public async Task<User> Handle(CreateUserCommand request, CancellationToken cancellationToken)
     {
-        var user = new User(request.Name, request.Email);
+        var user = User.Create(request.Name, request.Email);
         var passwordHash = BCrypt.Net.BCrypt.HashPassword(request.Password);
         user.SetPassword(passwordHash);
 

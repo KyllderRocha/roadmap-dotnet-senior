@@ -10,9 +10,9 @@ public class UpdateTaskCommandHandler : IRequestHandler<UpdateTaskCommand, UserT
     private readonly IUnitOfWork _unitOfWork;
     private readonly IHttpContextAccessor _httpContextAccessor;
 
-    public UpdateTaskCommandHandler(ITaskRepository userRepository, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor)
+    public UpdateTaskCommandHandler(ITaskRepository taskRepository, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor)
     {
-        _taskRepository = userRepository;
+        _taskRepository = taskRepository;
         _unitOfWork = unitOfWork;
         _httpContextAccessor = httpContextAccessor;
     }
