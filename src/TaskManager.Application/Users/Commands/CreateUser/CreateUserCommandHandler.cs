@@ -1,6 +1,7 @@
 using MediatR;
 using TaskManager.Domain.Entities;
 using TaskManager.Domain.Interfaces;
+using BCrypt.Net;
 
 public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, User>
 {
@@ -16,6 +17,8 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, User>
     public async Task<User> Handle(CreateUserCommand request, CancellationToken cancellationToken)
     {
         var user = new User(request.Name, request.Email);
+        var passwordHash = BCrypt.Net.BCrypt.HashPassword(request.Password);
+        user.SetPassword(passwordHash);
 
         await _userRepository.AddAsync(user);
         await _unitOfWork.SaveChangesAsync(cancellationToken);

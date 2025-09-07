@@ -20,6 +20,13 @@ public interface IUserRepository
     Task<User?> GetByIdAsync(Guid id);
 
     /// <summary>
+    /// Busca um usuário pelo seu email.
+    /// </summary>
+    /// <param name="email">O email do usuário.</param>
+    /// <returns>O usuário encontrado ou null se não existir.</returns>
+    Task<User?> GetByEmailAsync(string email);
+
+    /// <summary>
     /// Busca todos os usuários cadastrados.
     /// </summary>
     /// <returns>Uma lista de usuários.</returns>

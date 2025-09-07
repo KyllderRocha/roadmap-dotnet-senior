@@ -7,8 +7,5 @@ public class CreateTaskCommandValidator : AbstractValidator<CreateTaskCommand>
         RuleFor(x => x.title)
             .NotEmpty().WithMessage("O título é obrigatório.")
             .MaximumLength(200).WithMessage("O título não pode exceder 200 caracteres.");
-
-        RuleFor(x => x.userId)
-            .NotEmpty().WithMessage("O ID do utilizador é obrigatório.");
     }
 }

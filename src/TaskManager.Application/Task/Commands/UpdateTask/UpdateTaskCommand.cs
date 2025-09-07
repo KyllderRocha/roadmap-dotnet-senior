@@ -4,6 +4,5 @@ using TaskManager.Domain.Entities;
 public record UpdateTaskCommand(
     Guid Id,             
     string Title,
-    bool IsDone,
-    Guid UserId
+    bool IsDone
 ) : IRequest<UserTask>;

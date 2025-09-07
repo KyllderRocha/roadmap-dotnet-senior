@@ -1,0 +1,145 @@
+2025-09-06 14:28:43.380 -03:00 [FTL] The application failed to start correctly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at System.Diagnostics.DiagnosticSource.Write[T](String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in /home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Api/Program.cs:line 28
+2025-09-06 14:29:01.420 -03:00 [FTL] The application failed to start correctly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at System.Diagnostics.DiagnosticSource.Write[T](String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in /home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Api/Program.cs:line 28
+2025-09-06 14:52:59.756 -03:00 [FTL] The application failed to start correctly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at System.Diagnostics.DiagnosticSource.Write[T](String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in /home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Api/Program.cs:line 28
+2025-09-06 14:53:59.429 -03:00 [FTL] The application failed to start correctly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at System.Diagnostics.DiagnosticSource.Write[T](String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in /home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Api/Program.cs:line 39
+2025-09-06 14:54:52.354 -03:00 [FTL] The application failed to start correctly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at System.Diagnostics.DiagnosticSource.Write[T](String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in /home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Api/Program.cs:line 28
+2025-09-06 14:55:01.019 -03:00 [FTL] The application failed to start correctly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at System.Diagnostics.DiagnosticSource.Write[T](String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in /home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Api/Program.cs:line 28
+2025-09-06 15:04:58.046 -03:00 [FTL] The application failed to start correctly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at System.Diagnostics.DiagnosticSource.Write[T](String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in /home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Api/Program.cs:line 28
+2025-09-06 15:06:20.889 -03:00 [FTL] The application failed to start correctly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at System.Diagnostics.DiagnosticSource.Write[T](String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in /home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Api/Program.cs:line 28
+2025-09-06 21:41:18.575 -03:00 [WRN] No XML encryptor configured. Key {55e80747-c8e6-4b44-971e-0cf95b41d8cb} may be persisted to storage in unencrypted form.
+2025-09-06 21:41:55.569 -03:00 [INF] HTTP GET /swagger/index.html responded 200 in 108.1847 ms
+2025-09-06 21:41:55.606 -03:00 [INF] HTTP GET /swagger/swagger-ui.css responded 200 in 16.8691 ms
+2025-09-06 21:41:55.606 -03:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 16.8739 ms
+2025-09-06 21:41:55.606 -03:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 16.8836 ms
+2025-09-06 21:41:55.807 -03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 77.3310 ms
+2025-09-06 21:42:07.690 -03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-06 21:42:08.596 -03:00 [INF] HTTP GET /api/User responded 200 in 922.0273 ms
+2025-09-06 21:42:46.250 -03:00 [INF] HTTP POST /api/User responded 201 in 484.3156 ms
+2025-09-06 21:43:23.691 -03:00 [INF] HTTP GET /api/Task/GetUserTasks/4a4fcece-ffbc-475b-af63-a55ed9b0137d responded 401 in 5.4465 ms
+2025-09-06 21:43:59.853 -03:00 [INF] HTTP POST /api/User/login responded 200 in 282.0037 ms
+2025-09-06 21:44:49.300 -03:00 [INF] HTTP GET /api/Task/GetUserTasks/4a4fcece-ffbc-475b-af63-a55ed9b0137d responded 200 in 47.9747 ms
+2025-09-06 21:45:03.428 -03:00 [ERR] Erro não tratado: No route matches the supplied values.
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at TaskManager.Api.Middleware.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in /home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Api/Middleware/ExceptionHandlingMiddleware.cs:line 22
+2025-09-06 21:45:03.437 -03:00 [ERR] HTTP POST /api/Task responded 500 in 38.4591 ms
+2025-09-06 21:47:24.363 -03:00 [INF] HTTP GET /swagger/index.html responded 200 in 178.0929 ms
+2025-09-06 21:47:24.607 -03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 102.8166 ms
+2025-09-06 21:47:44.706 -03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-06 21:47:46.476 -03:00 [INF] HTTP POST /api/User/login responded 200 in 1793.1101 ms
+2025-09-06 21:49:32.305 -03:00 [ERR] Erro não tratado: No route matches the supplied values.
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at TaskManager.Api.Middleware.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in /home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Api/Middleware/ExceptionHandlingMiddleware.cs:line 22
+2025-09-06 21:49:32.329 -03:00 [ERR] HTTP POST /api/Task responded 500 in 79478.8471 ms
+2025-09-06 21:50:12.337 -03:00 [INF] HTTP GET /api/User responded 200 in 147.3098 ms
+2025-09-06 21:50:24.513 -03:00 [INF] HTTP GET /api/Task/GetUserTasks/4a4fcece-ffbc-475b-af63-a55ed9b0137d responded 200 in 68.8753 ms
+2025-09-06 21:51:36.401 -03:00 [INF] HTTP GET /swagger/index.html responded 200 in 185.0015 ms
+2025-09-06 21:51:36.570 -03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 106.6494 ms
+2025-09-06 21:52:09.015 -03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-06 21:52:10.192 -03:00 [INF] HTTP GET /api/User responded 200 in 1246.1097 ms
+2025-09-06 21:52:21.296 -03:00 [INF] HTTP GET /api/Task/GetUserTasks/4a4fcece-ffbc-475b-af63-a55ed9b0137d responded 200 in 218.9541 ms
+2025-09-06 21:52:45.604 -03:00 [INF] HTTP POST /api/Task responded 201 in 6455.4860 ms
+2025-09-06 21:52:53.800 -03:00 [INF] HTTP GET /api/Task/GetUserTasks/4a4fcece-ffbc-475b-af63-a55ed9b0137d responded 200 in 91.1496 ms

@@ -43,6 +43,13 @@ public class UserRepository : IUserRepository
         return await _context.Users.FindAsync(id);
     }
 
+    public async Task<User?> GetByEmailAsync(string email)
+    {
+        if (string.IsNullOrWhiteSpace(email)) throw new ArgumentException("Email cannot be null or empty.", nameof(email));
+
+        return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+    }
+
     public void Update(User user)
     {
         if (user == null) throw new ArgumentNullException(nameof(user));

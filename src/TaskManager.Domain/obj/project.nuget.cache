@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Z+VRPfTg8U6YFF9j6fu1tAxQtuExa2wTkh76bcceSau5X64ZhcH/Qz7j0npqlxDbt+f5cWqcIKcURsVjFpJSGA==",
+  "dgSpecHash": "pAP5NF7ljnhl3gO2JRhf71sB7vTrVEC4UMqvJ6CFedjpnEHc9g8+9yY8B/WXpgoJoisMsC31dO6IgyREcbO27Q==",
   "success": true,
-  "projectFilePath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/TaskManager.Domain.csproj",
+  "projectFilePath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Domain/TaskManager.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

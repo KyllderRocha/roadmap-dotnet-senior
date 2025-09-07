@@ -36,6 +36,10 @@ namespace TaskManager.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.HasKey("Id");
 
                     b.ToTable("Users");
@@ -67,12 +71,17 @@ namespace TaskManager.Infrastructure.Migrations
             modelBuilder.Entity("TaskManager.Domain.Entities.UserTask", b =>
                 {
                     b.HasOne("TaskManager.Domain.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("Tasks")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("TaskManager.Domain.Entities.User", b =>
+                {
+                    b.Navigation("Tasks");
                 });
 #pragma warning restore 612, 618
         }

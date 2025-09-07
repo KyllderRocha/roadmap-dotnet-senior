@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/TaskManager.Api.csproj": {}
+    "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Api/TaskManager.Api.csproj": {}
   },
   "projects": {
-    "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/TaskManager.Api.csproj": {
+    "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Api/TaskManager.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/TaskManager.Api.csproj",
+        "projectUniqueName": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Api/TaskManager.Api.csproj",
         "projectName": "TaskManager.Api",
-        "projectPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/TaskManager.Api.csproj",
+        "projectPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Api/TaskManager.Api.csproj",
         "packagesPath": "/home/kyllder/.nuget/packages/",
-        "outputPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Api/obj/",
+        "outputPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/kyllder/.nuget/NuGet/NuGet.Config"
@@ -26,11 +26,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Application/TaskManager.Application.csproj": {
-                "projectPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Application/TaskManager.Application.csproj"
+              "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Application/TaskManager.Application.csproj": {
+                "projectPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Application/TaskManager.Application.csproj"
               },
-              "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj": {
-                "projectPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj"
+              "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj": {
+                "projectPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj"
               }
             }
           }
@@ -45,6 +45,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.*, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.17, )"
@@ -95,14 +99,14 @@
         }
       }
     },
-    "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Application/TaskManager.Application.csproj": {
+    "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Application/TaskManager.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Application/TaskManager.Application.csproj",
+        "projectUniqueName": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Application/TaskManager.Application.csproj",
         "projectName": "TaskManager.Application",
-        "projectPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Application/TaskManager.Application.csproj",
+        "projectPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Application/TaskManager.Application.csproj",
         "packagesPath": "/home/kyllder/.nuget/packages/",
-        "outputPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Application/obj/",
+        "outputPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/kyllder/.nuget/NuGet/NuGet.Config"
@@ -117,8 +121,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/TaskManager.Domain.csproj": {
-                "projectPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/TaskManager.Domain.csproj"
+              "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Domain/TaskManager.Domain.csproj": {
+                "projectPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Domain/TaskManager.Domain.csproj"
               }
             }
           }
@@ -133,6 +137,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
             "FluentValidation": {
               "target": "Package",
               "version": "[12.0.0, )"
@@ -144,6 +152,10 @@
             "MediatR": {
               "target": "Package",
               "version": "[13.0.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.3.0, )"
             }
           },
           "imports": [
@@ -166,14 +178,14 @@
         }
       }
     },
-    "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/TaskManager.Domain.csproj": {
+    "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Domain/TaskManager.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/TaskManager.Domain.csproj",
+        "projectUniqueName": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Domain/TaskManager.Domain.csproj",
         "projectName": "TaskManager.Domain",
-        "projectPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/TaskManager.Domain.csproj",
+        "projectPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Domain/TaskManager.Domain.csproj",
         "packagesPath": "/home/kyllder/.nuget/packages/",
-        "outputPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Domain/obj/",
+        "outputPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/kyllder/.nuget/NuGet/NuGet.Config"
@@ -219,14 +231,14 @@
         }
       }
     },
-    "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj": {
+    "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj",
+        "projectUniqueName": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj",
         "projectName": "TaskManager.Infrastructure",
-        "projectPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj",
+        "projectPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj",
         "packagesPath": "/home/kyllder/.nuget/packages/",
-        "outputPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Infrastructure/obj/",
+        "outputPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/kyllder/.nuget/NuGet/NuGet.Config"
@@ -241,8 +253,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Application/TaskManager.Application.csproj": {
-                "projectPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/fase-2-task-manager-clean/src/TaskManager.Application/TaskManager.Application.csproj"
+              "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Application/TaskManager.Application.csproj": {
+                "projectPath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Application/TaskManager.Application.csproj"
               }
             }
           }
@@ -270,6 +282,10 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[9.0.4, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.14.0, )"
             }
           },
           "imports": [

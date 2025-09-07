@@ -1,8 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TaskManager.Application.Common.Interfaces;
 using TaskManager.Application.Services;
 using TaskManager.Domain.Interfaces;
+using TaskManager.Infrastructure.Authentication;
 using TaskManager.Infrastructure.Persistence;
 using TaskManager.Infrastructure.Persistence.Repositories;
 
@@ -14,8 +16,10 @@ public static class DependencyInjection
         this IServiceCollection services, 
         IConfiguration configuration)
     {
+        var connectionStringParaTeste = "Host=localhost;Port=5433;Database=taskmanagerdb;Username=postgres;Password=postgres";
+
         services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"), npgsqlOptions =>
+            options.UseNpgsql(connectionStringParaTeste, npgsqlOptions =>
             {
                 npgsqlOptions.EnableRetryOnFailure(
                     maxRetryCount: 5, 
@@ -28,6 +32,7 @@ public static class DependencyInjection
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<ITaskService, TaskService>();
+        services.AddSingleton<IJwtTokenGenerator, JwtTokenGenerator>();
 
         return services;
     }
