@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;                
 using System.Text; 
 using Microsoft.OpenApi.Models;
+using TaskManager.Application.Common.Interfaces;
+using TaskManager.Api.Services;
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
@@ -27,6 +29,7 @@ try
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
     builder.Services.AddHttpContextAccessor();
+    builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
 
     builder.Services.AddAuthentication(options =>
     {

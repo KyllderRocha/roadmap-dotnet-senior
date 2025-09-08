@@ -1,6 +1,7 @@
 using System.Security.Claims;
 using MediatR;
 using Microsoft.AspNetCore.Http;
+using TaskManager.Application.Common.Interfaces;
 using TaskManager.Domain.Entities;
 using TaskManager.Domain.Interfaces;
 
@@ -8,13 +9,13 @@ public class UpdateTaskCommandHandler : IRequestHandler<UpdateTaskCommand, UserT
 {
     private readonly ITaskRepository _taskRepository;
     private readonly IUnitOfWork _unitOfWork;
-    private readonly IHttpContextAccessor _httpContextAccessor;
+    private readonly ICurrentUserService _currentUserService;
 
-    public UpdateTaskCommandHandler(ITaskRepository taskRepository, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor)
+    public UpdateTaskCommandHandler(ITaskRepository taskRepository, IUnitOfWork unitOfWork, ICurrentUserService currentUserService)
     {
         _taskRepository = taskRepository;
         _unitOfWork = unitOfWork;
-        _httpContextAccessor = httpContextAccessor;
+        _currentUserService = currentUserService;
     }
 
     public async Task<UserTask> Handle(UpdateTaskCommand request, CancellationToken cancellationToken)
@@ -24,9 +25,9 @@ public class UpdateTaskCommandHandler : IRequestHandler<UpdateTaskCommand, UserT
         if (task == null)
             throw new NotFoundException(nameof(UserTask), request.Id);
 
-        var userIdString = _httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        var userId = _currentUserService.UserId;
 
-        if (string.IsNullOrEmpty(userIdString) || !Guid.TryParse(userIdString, out var userId) || task.UserId != userId)
+        if (!userId.HasValue || task.UserId != userId.Value)
         {
             throw new UnauthorizedAccessException("Não tem permissão para atualizar esta tarefa.");
         }
