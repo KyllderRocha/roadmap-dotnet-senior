@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../build/fase-1-task-manager-api.props" />
-</Project>

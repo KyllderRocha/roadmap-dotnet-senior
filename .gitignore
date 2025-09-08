@@ -1,0 +1,38 @@
+# Dependencies
+/packages
+/bin
+/obj
+
+# Visual Studio / Rider specific
+.vs/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+Build/
+build-results/
+
+# Rider
+.idea/
+*.sln.iml
+
+# User-specific files
+*.DotSettings.user
+
+# Mac files
+.DS_Store
+
+# Log files
+logs/
+*.log
+
+# Docker
+docker-compose.override.yml
