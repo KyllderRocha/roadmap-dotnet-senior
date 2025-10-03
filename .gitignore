@@ -36,3 +36,28 @@ logs/
 
 # Docker
 docker-compose.override.yml
+
+# Terraform Folder local do  que contém plugins e módulos
+.terraform/
+
+# Arquivos de estado locais
+*.tfstate
+*.tfstate.*
+
+# Arquivos .tfvars que podem conter valores e segredos específicos do ambiente.
+# Não ignore se você usa um .tfvars para valores não-sensíveis que precisam ser compartilhados.
+*.tfvars
+*.tfvars.json
+
+# Arquivos de override, geralmente usados para configurações locais que não devem ser compartilhadas.
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Arquivos de configuração da CLI do Terraform
+.terraformrc
+terraform.rc
+
+# Planos de execução salvos localmente, que também podem conter dados sensíveis.
+*.tfplan

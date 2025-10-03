@@ -6,14 +6,13 @@ on:
   pull_request:
     branches: [ "main" ]
 
-permissions:
-  contents: read
-  packages: write
+env:
+  AWS_REGION: ${{ secrets.AWS_REGION }}
+  ECR_REPOSITORY_BASE: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
   
 jobs:
-  build-and-push:
+  build-and-test:
     runs-on: ubuntu-latest
-
     steps:
       - name: Check out code
         uses: actions/checkout@v4
@@ -25,17 +24,39 @@ jobs:
 
       - name: Restore dependencies
         run: dotnet restore
-        working-directory: ./
 
       - name: Build
         run: dotnet build --no-restore
-        working-directory: ./
 
-      - name: Convert repository name to lowercase
-        if: github.event_name == 'push'
-        id: strings
-        shell: bash
-        run: echo "repo_lowercase=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+  build-and-push-images:
+    needs: build-and-test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' 
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    
+    strategy:
+      matrix:
+        service: [ 'UserService.Api', 'TaskService.Api', 'ApiGateway' ]
+        repo_name: [ 'user-service', 'task-service', 'api-gateway' ]
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Log in to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
 
       - name: Log in to GitHub Container Registry
         if: github.event_name == 'push'
@@ -45,11 +66,20 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push Docker image
+      - name: Convert repository name to lowercase
         if: github.event_name == 'push'
-        uses: docker/build-push-action@v5
-        with:
-          context: ./
-          file: .//dockerfile
-          push: true
-          tags: ghcr.io/${{ steps.strings.outputs.repo_lowercase }}:${{ github.sha }}
+        id: strings
+        shell: bash
+        run: echo "repo_lowercase=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+        
+      - name: Build, tag, and push image to ECR and GHCR
+        env:
+          ECR_REPOSITORY: ${{ env.ECR_REPOSITORY_BASE }}/${{ matrix.repo_name }}
+          GHCR_REPOSITORY: ghcr.io/${{ steps.ghcr_string.outputs.repo_owner_lowercase }}/${{ matrix.repo_name }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker build -t $ECR_REPOSITORY:$IMAGE_TAG -f src/${{ matrix.service }}/Dockerfile .
+          docker tag $ECR_REPOSITORY:$IMAGE_TAG $GHCR_REPOSITORY:$IMAGE_TAG
+
+          docker push $ECR_REPOSITORY:$IMAGE_TAG
+          docker push $GHCR_REPOSITORY:$IMAGE_TAG

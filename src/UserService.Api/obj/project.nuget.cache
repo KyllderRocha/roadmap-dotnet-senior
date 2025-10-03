@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S4J5keIJvpFzDx69t5C7SmgpQtFUr7mj/oF0P3j9J74c7cGneMPtEAPGlJY6Ck6r/hyOLEuVddPlFTkcT1006w==",
+  "dgSpecHash": "i9db965uCsYj8hKRCHrFZA8rNhMi3W8U9+6lFMreeQ22cju5n3OtGEXQYDo+6Tf0WO0RKSLUulSvpVLcktGrOA==",
   "success": true,
-  "projectFilePath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Api/TaskManager.Api.csproj",
+  "projectFilePath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/UserService.Api/UserService.Api.csproj",
   "expectedPackageFiles": [
     "/home/kyllder/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/home/kyllder/.nuget/packages/fluentvalidation/12.0.0/fluentvalidation.12.0.0.nupkg.sha512",
@@ -10,7 +10,7 @@
     "/home/kyllder/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/kyllder/.nuget/packages/mediatr/13.0.0/mediatr.13.0.0.nupkg.sha512",
     "/home/kyllder/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
-    "/home/kyllder/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/8.0.19/microsoft.aspnetcore.authentication.jwtbearer.8.0.19.nupkg.sha512",
+    "/home/kyllder/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/8.0.20/microsoft.aspnetcore.authentication.jwtbearer.8.0.20.nupkg.sha512",
     "/home/kyllder/.nuget/packages/microsoft.aspnetcore.http.abstractions/2.3.0/microsoft.aspnetcore.http.abstractions.2.3.0.nupkg.sha512",
     "/home/kyllder/.nuget/packages/microsoft.aspnetcore.http.features/2.3.0/microsoft.aspnetcore.http.features.2.3.0.nupkg.sha512",
     "/home/kyllder/.nuget/packages/microsoft.aspnetcore.openapi/8.0.17/microsoft.aspnetcore.openapi.8.0.17.nupkg.sha512",
@@ -56,6 +56,7 @@
     "/home/kyllder/.nuget/packages/mono.texttemplating/3.0.0/mono.texttemplating.3.0.0.nupkg.sha512",
     "/home/kyllder/.nuget/packages/npgsql/9.0.3/npgsql.9.0.3.nupkg.sha512",
     "/home/kyllder/.nuget/packages/npgsql.entityframeworkcore.postgresql/9.0.4/npgsql.entityframeworkcore.postgresql.9.0.4.nupkg.sha512",
+    "/home/kyllder/.nuget/packages/rabbitmq.client/7.1.2/rabbitmq.client.7.1.2.nupkg.sha512",
     "/home/kyllder/.nuget/packages/serilog/4.2.0/serilog.4.2.0.nupkg.sha512",
     "/home/kyllder/.nuget/packages/serilog.aspnetcore/9.0.0/serilog.aspnetcore.9.0.0.nupkg.sha512",
     "/home/kyllder/.nuget/packages/serilog.extensions.hosting/9.0.0/serilog.extensions.hosting.9.0.0.nupkg.sha512",
@@ -89,7 +90,8 @@
     "/home/kyllder/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "/home/kyllder/.nuget/packages/system.text.encodings.web/9.0.7/system.text.encodings.web.9.0.7.nupkg.sha512",
     "/home/kyllder/.nuget/packages/system.text.json/9.0.7/system.text.json.9.0.7.nupkg.sha512",
-    "/home/kyllder/.nuget/packages/system.threading.channels/7.0.0/system.threading.channels.7.0.0.nupkg.sha512"
+    "/home/kyllder/.nuget/packages/system.threading.channels/7.0.0/system.threading.channels.7.0.0.nupkg.sha512",
+    "/home/kyllder/.nuget/packages/system.threading.ratelimiting/8.0.0/system.threading.ratelimiting.8.0.0.nupkg.sha512"
   ],
   "logs": []
 }
