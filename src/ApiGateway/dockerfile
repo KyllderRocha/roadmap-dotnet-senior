@@ -1,0 +1,22 @@
+# Estágio 1: Build da Aplicação
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /app
+
+# Copia apenas o ficheiro de projeto do Gateway, pois ele não tem outras dependências de projeto
+COPY src/ApiGateway/*.csproj ./src/ApiGateway/
+RUN dotnet restore ./src/ApiGateway/ApiGateway.csproj
+
+# Copia o código-fonte do Gateway
+COPY src/ApiGateway/. ./src/ApiGateway/
+
+# Aponta para a pasta do projeto e publica
+WORKDIR /app/src/ApiGateway
+RUN dotnet publish -c Debug -o /app/out 
+
+# Estágio 2: Imagem final de Runtime
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+WORKDIR /app
+COPY --from=build /app/out ./
+
+# Define o ponto de entrada para a DLL do ApiGateway
+ENTRYPOINT ["dotnet", "ApiGateway.dll"]

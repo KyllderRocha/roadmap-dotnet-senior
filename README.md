@@ -96,7 +96,8 @@ Este projeto é dividido em fases, cada uma introduzindo novos conceitos e tecno
 4. **Aplicar as Migrations:**
    Com os contentores a correr, abra um novo terminal e execute o comando para criar as tabelas na base de dados:
    ```sh
-   dotnet ef database update --project src/TaskManager.Infrastructure --startup-project src/TaskManager.Api
+   dotnet ef database update --project src/TaskManager.Infrastructure --startup-project src/UserService.Api
+   dotnet ef database update --project src/TaskManager.Infrastructure --startup-project src/TaskService.Api
    ```
 
 5. **Aceder à API:**

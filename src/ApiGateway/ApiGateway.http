@@ -1,0 +1,22 @@
+@Api_HostAddress = http://localhost:8080
+
+GET {{Api_HostAddress}}/users-api/user
+Content-Type: application/json
+
+###
+
+POST {{Api_HostAddress}}/users-api/user
+Content-Type: application/json
+
+{
+  "name": "John",
+  "email": "john.doe@example.com",
+  "password": "Password123!"
+}
+
+###
+
+GET {{Api_HostAddress}}/tasks-api/task
+Content-Type: application/json
+
+

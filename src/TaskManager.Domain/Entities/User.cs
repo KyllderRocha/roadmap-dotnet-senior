@@ -20,6 +20,16 @@ public class User
             PasswordHash = string.Empty
         };
     }
+    public static User CreateWithGuid(Guid id, string name, string email)
+    {
+        return new User
+        {
+            Id = id,
+            Name = name,
+            Email = email,
+            PasswordHash = string.Empty
+        };
+    }
 
     public void SetPassword(string passwordHash)
     {
