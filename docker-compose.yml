@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   api-gateway:
     container_name: api-gateway
@@ -11,6 +9,8 @@ services:
     depends_on:
       - users-api
       - tasks-api
+    networks:
+      - app_network
 
   users-api:
     build:
@@ -27,6 +27,8 @@ services:
         condition: service_healthy
       rabbitmq: 
         condition: service_healthy
+    networks:
+      - app_network
 
   tasks-api:
     build:
@@ -43,6 +45,8 @@ services:
         condition: service_healthy
       rabbitmq: 
         condition: service_healthy
+    networks:
+      - app_network
 
   db:
     image: postgres:15
@@ -59,6 +63,8 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - app_network
 
   rabbitmq:
     container_name: rabbitmq
@@ -71,6 +77,39 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - app_network
+
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    depends_on:
+      - users-api
+      - tasks-api
+      - api-gateway
+    networks:
+      - app_network
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000" 
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - prometheus
+    networks:
+      - app_network
 
 volumes:
   postgres_data:
+  grafana_data:
+
+networks:
+  app_network:
+    driver: bridge

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pAP5NF7ljnhl3gO2JRhf71sB7vTrVEC4UMqvJ6CFedjpnEHc9g8+9yY8B/WXpgoJoisMsC31dO6IgyREcbO27Q==",
+  "dgSpecHash": "8ivc3d7mEN/3nzAev/pwF/6Hvpga8x0pvcfiUurWNfv43N56PaXChKbwcKwTsct3JAWV9FxEP03+AqiifESOIw==",
   "success": true,
   "projectFilePath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Domain/TaskManager.Domain.csproj",
   "expectedPackageFiles": [],

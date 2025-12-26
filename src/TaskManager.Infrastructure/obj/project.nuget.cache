@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "C/LfOBhPjjdGJezoovysBuG7nBFNAdS/xC652c/NhKNEpKlcRXnswtkOVikrnOZHLJSTiJ5h34JmTbqHhYqhDQ==",
+  "dgSpecHash": "Xi78rPpkWtzMEMd0d4+yeKNaCi2BIExJZ/JV6d3ToNXKu2lZbtlmK1/YtYDUoOXdV7wnvd43JIpqfno24oJC5A==",
   "success": true,
   "projectFilePath": "/home/kyllder/Documents/Repositories/roadmap-dotnet-senior/src/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj",
   "expectedPackageFiles": [

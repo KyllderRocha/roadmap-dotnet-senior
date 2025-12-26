@@ -8,6 +8,7 @@ using System.Text;
 using Microsoft.OpenApi.Models;
 using TaskManager.Application.Common.Interfaces;
 using TaskManager.Api.Services;
+using Prometheus; 
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
@@ -85,6 +86,9 @@ try
     var app = builder.Build();
     app.UseMiddleware<ExceptionHandlingMiddleware>();
     app.UseSerilogRequestLogging();
+
+    app.UseMetricServer();
+    app.UseHttpMetrics();
 
     // Configure the HTTP request pipeline.
     if (app.Environment.IsDevelopment())

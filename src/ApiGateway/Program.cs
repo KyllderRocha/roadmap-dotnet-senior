@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
+using Prometheus;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,20 +40,24 @@ builder.Services.AddOcelot(builder.Configuration);
 
 var app = builder.Build();
 // app.UseAuthentication();
-app.Use(async (context, next) =>
-{
-    if (context.User.Identity is not null && context.User.Identity.IsAuthenticated)
-    {
-        var logger = context.RequestServices.GetRequiredService<ILogger<Program>>();
-        logger.LogInformation("--- Claims do Usuário Autenticado ---");
-        foreach (var claim in context.User.Claims)
-        {
-            logger.LogInformation("Claim Type: {Type}, Claim Value: {Value}", claim.Type, claim.Value);
-        }
-        logger.LogInformation("------------------------------------");
-    }
-    await next.Invoke();
-});
+
+app.UseMetricServer();
+app.UseHttpMetrics();
+
+// app.Use(async (context, next) =>
+// {
+//     if (context.User.Identity is not null && context.User.Identity.IsAuthenticated)
+//     {
+//         var logger = context.RequestServices.GetRequiredService<ILogger<Program>>();
+//         logger.LogInformation("--- Claims do Usuário Autenticado ---");
+//         foreach (var claim in context.User.Claims)
+//         {
+//             logger.LogInformation("Claim Type: {Type}, Claim Value: {Value}", claim.Type, claim.Value);
+//         }
+//         logger.LogInformation("------------------------------------");
+//     }
+//     await next.Invoke();
+// });
 
 await app.UseOcelot();
 app.Run();

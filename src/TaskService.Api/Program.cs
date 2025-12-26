@@ -6,6 +6,7 @@ using TaskManager.Application.Common.Interfaces;
 using TaskManager.Api.Services;
 using TaskManager.Api.Subscribers;
 using Microsoft.AspNetCore.Authentication;
+using Prometheus; 
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
@@ -38,6 +39,9 @@ try
     var app = builder.Build();
     app.UseMiddleware<ExceptionHandlingMiddleware>();
     app.UseSerilogRequestLogging();
+
+    app.UseMetricServer();
+    app.UseHttpMetrics();
 
     // Configure the HTTP request pipeline.
     if (app.Environment.IsDevelopment())
